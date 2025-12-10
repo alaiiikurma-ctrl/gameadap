@@ -1,0 +1,153 @@
+/* Reset & global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #222;
+}
+.logo-img {
+  height: 50px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+  background-color: #f39c12;
+  color: #222;
+  border-radius: 4px;
+}
+
+/* Burger menu for small screens */
+.burger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #222;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+/* Hero */
+.hero {
+    
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmHYgNgVohWHLJG2n_DWtK_iKcR_z8VtAYDg&s") no-repeat center center/cover;
+  text-align: center;
+  color: #000000;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+.hero button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: #f39c12;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.hero button:hover {
+  background: #e67e22;
+  transform: scale(1.05);
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 50px 30px;
+  background: #f4f4f4;
+}
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.2rem;
+}
+.card p {
+  padding: 0 15px 20px;
+  color: #555;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: #f39c12;
+  color: white;
+}
+.card:hover .card-img {
+  opacity: 0.8;
+}
+
+/* Footer / Contact */
+.footer-wrapper {
+  background: #222;
+  padding: 40px 20px;
+  text-align: center;
+}
+.footer-wrapper footer p {
+  color: #fff;
+  font-size: 0.9rem;
+}
