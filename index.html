@@ -68,11 +68,70 @@
   </section>
 
   <script>
-    const burger = document.getElementById('burger');
-    const navMenu = document.getElementById('nav-menu');
-    burger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+   
+
+
+  /* ============================
+     1) localStorage Қолдауын Тексеру
+     ============================ */
+  function checkLocalStorage() {
+    try {
+      const testKey = "__test__";
+      localStorage.setItem(testKey, "1");
+      localStorage.removeItem(testKey);
+      return true; // қолдайды
+    } catch (e) {
+      return false; // қолдауы жоқ
+    }
+  }
+
+  if (!checkLocalStorage()) {
+    alert("⚠️ Сіздің браузеріңіз localStorage технологиясын қолдамайды!");
+  }
+
+  /* ============================
+     2) Lazy Loading (көрінгенде суретті жүктеу)
+     ============================ */
+
+  // Барлық суреттерді табамыз
+  const images = document.querySelectorAll('.card-img');
+
+  // Әр суретке бастапқыда 'data-src' орнатамыз
+  images.forEach(img => {
+    img.dataset.src = img.src; // нақты сурет мекенжайын сақтаймыз
+    img.src = "";              // суретті дереу жүктемейміз
+  });
+
+  // Егер браузер IntersectionObserver қолдаса
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const image = entry.target;
+          image.src = image.dataset.src; // көрінгенде ғана жүктеледі
+          obs.unobserve(image);
+        }
+      });
     });
+
+    images.forEach(img => observer.observe(img));
+
+  } else {
+    // Егер қолдамаса — суреттерді бірден жүктейміз (кроссбраузерлік fallback)
+    images.forEach(img => {
+      img.src = img.dataset.src;
+    });
+  }
+
+  /* ============================
+     3) Бургер меню коды (өз кодыңыз)
+     ============================ */
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
   </script>
 
 </body>
