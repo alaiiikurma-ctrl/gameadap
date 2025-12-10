@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Landing Page</title>
+  <link rel="stylesheet" href="anime.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://genlogo.com/files/genlogo_rus/news/30/1559741545_0.jpg" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <div class="burger" id="burger">☰</div>
+      <ul id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Welcome to Game Landing Page</h1>
+    <p>Discover awesome games</p>
+    <button>Get Started</button>
+  </section>
+
+  <section id="games" class="card-grid">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRZhf47rm5f33wD-XIW-DJoJ-RoeA8WETn6g&s" alt="Game 1" class="card-img">
+      <h3>Game Title 1</h3>
+      <p>Some description for game 1.</p>
+    </div>
+    <div class="card">
+      <img src="https://xpert.digital/wp-content/uploads/2023/10/roblox-1-1200px-png.png" alt="Game 2" class="card-img">
+      <h3>Game Title 2</h3>
+      <p>Some description for game 2.</p>
+    </div>
+    <div class="card">
+      <img src="https://avatars.mds.yandex.net/get-games/1890793/2a0000018ef295ca38bbb518c05e4bb90438/orig" alt="Game 3" class="card-img">
+      <h3>Game Title 3</h3>
+      <p>Some description for game 3.</p>
+    </div>
+    <div class="card">
+      <img src="https://brain-test.ru/wp-content/uploads/2020/01/unnamed.png" alt="Game 4" class="card-img">
+      <h3>Game Title 4</h3>
+      <p>Some description for game 4.</p>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShkGTrMJhsFipMmVQ_Wxe_X1rAkSpsvRhm4w&s" alt="Game 5" class="card-img">
+      <h3>Game Title 5</h3>
+      <p>Some description for game 5.</p>
+    </div>
+    <div class="card">
+      <img src="https://articles-img.sftcdn.net/t_article_cover_m/auto-mapping-folder/sites/3/2023/03/Diamante-Royale-y-mas-en-la-agen.jpg" alt="Game 6" class="card-img">
+      <h3>Game Title 6</h3>
+      <p>Some description for game 6.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="footer-wrapper">
+    <footer>
+      <p>© 2025 Your Name</p>
+    </footer>
+  </section>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
